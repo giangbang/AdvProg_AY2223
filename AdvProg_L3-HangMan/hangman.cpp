@@ -117,7 +117,8 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 ***/
 void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
-    chars += " " + ch;
+    chars += ch;
+    chars += " "; 
 }
 
 /***
@@ -128,7 +129,7 @@ void updateEnteredChars(const char ch, string& chars){
 ***/
 void updateIncorrectGuess(int& incorrectGuess){
     // TODO: increase the value of incorrectGuess by 1
-    ++incorrectGuess;
+    incorrectGuess+=1;
 }
 
 /***
