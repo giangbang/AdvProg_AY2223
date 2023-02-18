@@ -51,7 +51,7 @@ Game::~Game()
 ***/
 
 void Game::snakeMoveTo(Position pos) {
-    CellType currentCell = getCellType(pos)
+    CellType currentCell = getCellType(pos);
 	if (currentCell == CELL_SNAKE || currentCell == CELL_OFF_BOARD) {
         // step 1: if position belongs to BOARD or SNAKE body, status is GAME_OVER
         status = GAME_OVER;
@@ -140,7 +140,7 @@ void Game::nextStep()
 
 		// check if snake can move to the next direction, set current direction as next
         if (canChange(currentDirection, next)) {
-        	currentDirection = next
+        	currentDirection = next;
         	break;
 		}
     }
