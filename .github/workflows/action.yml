@@ -144,9 +144,10 @@ jobs:
           sudo apt install -y libcppunit-dev
           sudo apt install libsdl2-dev
           sudo apt install libsdl2-image-dev
-          sudo apt-get install x11-xserver-utils
-          xrandr --addmode VIRTUAL1 1024x768
-          xrandr --output VIRTUAL1 --mode 1024x768 --left-of HDMI3
+          sudo apt install xvfb
+          export DISPLAY=:1
+          Xvfb :1 -screen 0 1024x768x16 &
+          sleep 1
       - name: make & test
         working-directory: ./AdvProg_L6-Painter
         run: |
