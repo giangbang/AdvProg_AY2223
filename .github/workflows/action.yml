@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - '.github/workflows/**'
       - '**/mainTest.cpp'
-      
+
 jobs:
   get_changed_files:
     runs-on: ubuntu-latest
@@ -19,9 +19,9 @@ jobs:
       run: |
         echo "Modified:"
         echo "${{ steps.thuytt_files.outputs.modified }}"
-    outputs: 
+    outputs:
       abc: ${{ steps.thuytt_files.outputs.modified }}
-  
+
 #   check_in_folder:
 #     needs: get_changed_files
 #     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
           ./configure
           make
           make test
-  
+
   # AdvProg_L1-GuessIt
   check_AdvProg_L1:
     needs: get_changed_files
@@ -91,7 +91,7 @@ jobs:
           ./configure
           make
           make test
-        
+
   # AdvProg_L3_HangMan
   check_AdvProg_L3:
     needs: get_changed_files
@@ -110,7 +110,7 @@ jobs:
           ./configure
           make
           make test
-  
+
   # AdvProg_L4-SimpleAI
   check_AdvProg_L4:
     needs: get_changed_files
@@ -129,7 +129,7 @@ jobs:
           ./configure
           make
           make test
-        
+
   # AdvProg_L6-Painter
   check_AdvProg_L6:
     needs: get_changed_files
@@ -144,13 +144,21 @@ jobs:
           sudo apt install -y libcppunit-dev
           sudo apt install libsdl2-dev
           sudo apt install libsdl2-image-dev
+          # sudo apt-get install libx11-dev libxext-dev xorg-dev libx11-dev libgl1-mesa-glx \
+          #     libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev \
+          #     libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+          #     libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev
+          # sudo apt install xvfb
+          # export DISPLAY=:1
+          # Xvfb :1 -screen 0 1024x768x16 &
+          # sleep 1
       - name: make & test
         working-directory: ./AdvProg_L6-Painter
         run: |
           ./configure
           make
           make test
-        
+
   # AdvProg_L7-Snake
   check_AdvProg_L7:
     needs: get_changed_files
@@ -172,4 +180,3 @@ jobs:
           ./configure
           make
           make test
-
