@@ -144,7 +144,10 @@ jobs:
           sudo apt install -y libcppunit-dev
           sudo apt install libsdl2-dev
           sudo apt install libsdl2-image-dev
-          sudo apt-get install x11-xserver-utils
+          sudo apt-get install libx11-dev libxext-dev \
+              libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev \
+              libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+              libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev
           xrandr --fb 1280x1024
       - name: make & test
         working-directory: ./AdvProg_L6-Painter
