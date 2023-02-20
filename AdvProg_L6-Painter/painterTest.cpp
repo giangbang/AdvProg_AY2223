@@ -81,7 +81,6 @@ bool verifyTurnLeft(double degree, double curAngle, double expectedAngle) {
     painter.setAngle(curAngle);
     painter.turnLeft(degree);
     // Alowing some slack space
-    std::cout << painter.getAngle() << " " << expectedAngle << std::endl;
     if (abs(painter.getAngle() - expectedAngle) < 1e-6) {
         return true;
     }
