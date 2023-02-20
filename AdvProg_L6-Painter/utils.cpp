@@ -8,7 +8,7 @@ SDL_Color dict2SDL_Color(int r, int g, int b) {
 	return color;
 }
 
-bool validColorValue(int value) { 
+bool validColorValue(int value) {
 	if (value >=0 && value <= 255) return true;
 	else return false;
 }
@@ -54,15 +54,14 @@ void quitSDL(SDL_Window **window, SDL_Renderer **renderer)
 void waitUntilKeyPressed()
 {
 	SDL_Event e;
-	bool keyPressed = false;
-	while (!keyPressed) {
-		if (SDL_WaitEvent(&e) != 0) {
-			if (e.type == SDL_KEYDOWN) {
-				keyPressed = true;
-			} else if (e.type == SDL_QUIT) {
-				keyPressed = true;
-			}
-		}
-		SDL_Delay(10000);
+	bool quit = false;
+	while (!quit) {
+		while( SDL_PollEvent( &e ) != 0 ) {
+	    //User requests quit
+	    if( e.type == SDL_QUIT )
+	    {
+	        quit = true;
+	    }
+	  }
 	}
 }
