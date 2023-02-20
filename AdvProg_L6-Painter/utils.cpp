@@ -21,8 +21,8 @@ void logSDLError(std::ostream& os, const std::string &msg)
 void initSDL(SDL_Window **window, SDL_Renderer **renderer) {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
 		logSDLError(std::cout, "SDL_Init");
-		std::cout << "The program will still continue without a video device!" << std::endl;
-		// exit(1);
+		// std::cout << "The program will still continue without a video device!" << std::endl;
+		exit(1);
 	}
 	*window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 	//window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
