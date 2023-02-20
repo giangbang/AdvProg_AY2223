@@ -68,7 +68,7 @@ void waitUntilKeyPressed()
 	while (!quit) {
 		while( SDL_PollEvent( &e ) != 0 ) {
 	    //User requests quit
-	    if( e.type == SDL_QUIT )
+	    if( e.type == SDL_QUIT || e.type == SDL_KEYDOWN )
 	    {
 	        quit = true;
 	    }
