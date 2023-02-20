@@ -10,7 +10,7 @@ void Painter::setColor(SDL_Color _color)
 { 
     // TODO: set the color value for the Painter and set Render Draw Color
 	color = _color;
-	SDL_SetRenderDrawColor(SDL_Renderer(), color.r, color.g, color.b, color.a);
+	SDL_SetRenderDrawColor(getRenderer(), color.r, color.g, color.b, color.a);
 }
 
 
@@ -67,8 +67,9 @@ void Painter::turnRight(double degree)
 	angle -= 90;
 }
 
-int randint(int lo = 0, int hi = 256) {
-    return rand() % (hi-lo) + lo;
+Uint8 randint(int lo = 0, int hi = 256) {
+	Uint8 random = rand() % (hi-lo) + lo;
+    return random;
 }
 
 /***  
@@ -80,7 +81,7 @@ int randint(int lo = 0, int hi = 256) {
 void Painter::randomColor()
 {
     // TODO: set random color
-	int r=randint(), g=randint(), b=randint();
+	Uint8 r=randint(), g=randint(), b=randint();
 	SDL_Color c = {r, g, b, 255};
 	setColor(c);
 }
