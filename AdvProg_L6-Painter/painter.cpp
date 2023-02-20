@@ -96,7 +96,7 @@ void Painter::clearWithBgColor(SDL_Color bgColor)
 {
     SDL_Color curColor = color;
     setColor(bgColor);
-	SDL_RenderClear(renderer);
+	  SDL_RenderClear(renderer);
     setColor(curColor);
 }
 
