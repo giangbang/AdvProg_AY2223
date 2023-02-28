@@ -178,7 +178,7 @@ bool wordConformToMask(const string& word, const string& mask, char ch)
 		if (mask[i]!='_' && mask[i] != word[i]) return false;
 	}
 	set<char> s;
-	for (char c : word) s.insert(c);
+	for (char c : word) s.insert(c); 
     return s.find(ch) != s.end();
 }
 
