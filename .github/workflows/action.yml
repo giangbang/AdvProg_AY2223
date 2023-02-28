@@ -171,8 +171,3 @@ jobs:
           chmod +x configure
           ./configure
           make
-<<<<<<< HEAD
-          make test
-=======
-          make test
->>>>>>> bf58e5710f97a71b544f772393ad3a980d6afcf9
